@@ -339,7 +339,7 @@ double stringPCControls::sampleTensFast(int selectedString)
 	else
 		strng="0";
 	
-	double conversion=100/3.0;
+	double conversion=100/3.104;
 	
 	string command;
 	command.append("2");
@@ -348,7 +348,7 @@ double stringPCControls::sampleTensFast(int selectedString)
 	ardu << command;
 	recievedValue = readLine();
 	sensorVolts = atof(recievedValue.c_str());	//Convert string into double
-	sensorPounds=sensorVolts*(conversion);		//Convert Volts into pounds
+	sensorPounds=(sensorVolts-0.01)*(conversion);		//Convert Volts into pounds
 			
 	return sensorPounds;
 }

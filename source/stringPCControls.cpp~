@@ -235,6 +235,8 @@ void stringPCControls::sampleString(int selectedString)
 {
 	string testString;
 	string strng;
+	int index=0;	
+
 	if(selectedString==5)
 		strng="5";
 	else if(selectedString==4)
@@ -247,7 +249,7 @@ void stringPCControls::sampleString(int selectedString)
 		strng="1";
 	else
 		strng="0";
-	int index=0;	
+	
 	string command;
 	command.append("1");
 	command.append(strng);
@@ -512,22 +514,9 @@ void stringPCControls::resetPosition(int strng)
 	motorStep(strng, totalSteps[strng], 1);
 }
 
-void stringPCControls::motorPower(int state)
-{
-	string command;
-	string stateString;	
-	if(state ==1)
-		stateString="1";
-	else
-		stateString="0";
-	command.append("5");
-	command.append(stateString);
-	command.append("\n");	
-	ardu << command;
- 	cout<<readLine();
-
-
-}
+/****************************************************************** 
+ *	Step back motor to original position 
+ ******************************************************************/ 
 
 void stringPCControls::writePositions()
 {
