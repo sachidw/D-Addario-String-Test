@@ -1,0 +1,3 @@
+./tune
+gnuplot plot.gp
+
