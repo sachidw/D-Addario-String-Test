@@ -1,0 +1,29 @@
+Wed May 30 23:02:36 EDT 2012 String 0	Frequency: 146.83   	Tension: 15
+Wed May 30 23:02:36 EDT 2012 String 1	Frequency: 82.41   	Tension: 15
+Wed May 30 23:02:36 EDT 2012 String 2	Frequency: 146.83   	Tension: 15.6
+Wed May 30 23:02:36 EDT 2012 String 3	Frequency: 196   	Tension: 12.1
+Wed May 30 23:02:36 EDT 2012 String 4	Frequency: 246.94   	Tension: 11.6
+Wed May 30 23:02:36 EDT 2012 String 5	Frequency: 329.63   	Tension: 15.3
+Wed May 30 23:02:36 EDT 2012 Port: /dev/ttyACM1
+Wed May 30 23:02:36 EDT 2012 Attempting Initialize Port
+Wed May 30 23:02:39 EDT 2012 ARDUINO: Initialized
+Wed May 30 23:02:39 EDT 2012 Desired freq: 146.83
+Wed May 30 23:02:47 EDT 2012 Signal Power(RMS) 3.82484
+Wed May 30 23:02:47 EDT 2012 INITIAL FREQ: 146.626
+Wed May 30 23:02:47 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Increment: 100
+Wed May 30 23:02:47 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~Increment: 50
+Wed May 30 23:02:47 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`Increment: 20
+Wed May 30 23:02:56 EDT 2012 Signal Power(RMS) 3.16016
+Wed May 30 23:03:05 EDT 2012 ARDUINO:HalfPluck 0
+Wed May 30 23:03:05 EDT 2012 Signal Power(RMS) 2.66071
+Wed May 30 23:03:15 EDT 2012 ARDUINO:HalfPluck 0
+Wed May 30 23:03:15 EDT 2012 Signal Power(RMS) 3.37319
+Wed May 30 23:03:15 EDT 2012 Frequency: 146.526
+Wed May 30 23:03:15 EDT 2012 prevFreq: 146.626
+Wed May 30 23:03:33 EDT 2012 POWER ON
+Wed May 30 23:03:33 EDT 2012 0Done Step
+Wed May 30 23:03:33 EDT 2012 POWER OFF
+Wed May 30 23:03:33 EDT 2012 Signal Power(RMS) 6.43604
+Wed May 30 23:03:33 EDT 2012 Frequency: 146.973
+Wed May 30 23:03:33 EDT 2012 prevFreq: 146.526
+Wed May 30 23:03:33 EDT 2012 Port Closed

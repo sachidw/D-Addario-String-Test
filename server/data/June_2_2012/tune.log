@@ -1,0 +1,84 @@
+Sat Jun  2 02:18:41 EDT 2012 String 0	Frequency: 246.94   	Tension: 11.6
+Sat Jun  2 02:18:41 EDT 2012 String 1	Frequency: 196   	Tension: 12.1
+Sat Jun  2 02:18:41 EDT 2012 String 2	Frequency: 329.63   	Tension: 15.6
+Sat Jun  2 02:18:41 EDT 2012 String 3	Frequency: 196   	Tension: 12.1
+Sat Jun  2 02:18:41 EDT 2012 String 4	Frequency: 246.94   	Tension: 11.6
+Sat Jun  2 02:18:41 EDT 2012 String 5	Frequency: 329.63   	Tension: 15.3
+Sat Jun  2 02:18:41 EDT 2012 Port: /dev/ttyACM0
+Sat Jun  2 02:18:41 EDT 2012 Attempting Initialize Port
+Sat Jun  2 02:19:21 EDT 2012 String 0	Frequency: 246.94   	Tension: 11.6
+Sat Jun  2 02:19:21 EDT 2012 String 1	Frequency: 196   	Tension: 12.1
+Sat Jun  2 02:19:21 EDT 2012 String 2	Frequency: 329.63   	Tension: 15.6
+Sat Jun  2 02:19:21 EDT 2012 String 3	Frequency: 196   	Tension: 12.1
+Sat Jun  2 02:19:21 EDT 2012 String 4	Frequency: 246.94   	Tension: 11.6
+Sat Jun  2 02:19:21 EDT 2012 String 5	Frequency: 329.63   	Tension: 15.3
+Sat Jun  2 02:19:21 EDT 2012 Port: /dev/ttyACM1
+Sat Jun  2 02:19:21 EDT 2012 Attempting Initialize Port
+Sat Jun  2 02:19:24 EDT 2012 ARDUINO: Initialized
+Sat Jun  2 02:19:24 EDT 2012 Desired freq: 246.94
+Sat Jun  2 02:19:33 EDT 2012 Signal Power(RMS) 2.68518
+Sat Jun  2 02:19:33 EDT 2012 INITIAL FREQ: 247.492
+Sat Jun  2 02:19:33 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Increment: 100
+Sat Jun  2 02:19:33 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~Increment: 50
+Sat Jun  2 02:19:33 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`Increment: 20
+Sat Jun  2 02:19:40 EDT 2012 POWER OFF
+Sat Jun  2 02:19:40 EDT 2012 POWER OFF
+Sat Jun  2 02:19:40 EDT 2012 6Done Step
+Sat Jun  2 02:19:40 EDT 2012 Desired freq: 196
+Sat Jun  2 02:19:49 EDT 2012 Signal Power(RMS) 6.21939
+Sat Jun  2 02:19:49 EDT 2012 INITIAL FREQ: 189.935
+Sat Jun  2 02:19:49 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Increment: 100
+Sat Jun  2 02:19:58 EDT 2012 Signal Power(RMS) 5.75632
+Sat Jun  2 02:19:58 EDT 2012 Frequency: 189.954
+Sat Jun  2 02:19:58 EDT 2012 prevFreq: 189.935
+Sat Jun  2 02:20:21 EDT 2012 POWER ON
+Sat Jun  2 02:20:21 EDT 2012 1Done Step
+Sat Jun  2 02:20:21 EDT 2012 POWER OFF
+Sat Jun  2 02:20:21 EDT 2012 Signal Power(RMS) 5.5843
+Sat Jun  2 02:20:21 EDT 2012 Frequency: 195.678
+Sat Jun  2 02:20:21 EDT 2012 prevFreq: 189.954
+Sat Jun  2 02:20:21 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~Increment: 50
+Sat Jun  2 02:20:21 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`Increment: 20
+Sat Jun  2 02:20:30 EDT 2012 Signal Power(RMS) 6.16908
+Sat Jun  2 02:20:30 EDT 2012 Frequency: 194.95
+Sat Jun  2 02:20:30 EDT 2012 prevFreq: 189.954
+Sat Jun  2 02:20:51 EDT 2012 POWER ON
+Sat Jun  2 02:20:51 EDT 2012 1Done Step
+Sat Jun  2 02:20:51 EDT 2012 POWER OFF
+Sat Jun  2 02:20:51 EDT 2012 Signal Power(RMS) 6.24898
+Sat Jun  2 02:20:51 EDT 2012 Frequency: 195.582
+Sat Jun  2 02:20:51 EDT 2012 prevFreq: 194.95
+Sat Jun  2 02:21:12 EDT 2012 POWER ON
+Sat Jun  2 02:21:12 EDT 2012 1Done Step
+Sat Jun  2 02:21:12 EDT 2012 POWER OFF
+Sat Jun  2 02:21:12 EDT 2012 Signal Power(RMS) 6.15579
+Sat Jun  2 02:21:12 EDT 2012 Frequency: 196.336
+Sat Jun  2 02:21:12 EDT 2012 prevFreq: 195.582
+Sat Jun  2 02:21:21 EDT 2012 POWER OFF
+Sat Jun  2 02:21:21 EDT 2012 POWER OFF
+Sat Jun  2 02:21:21 EDT 2012 6Done Step
+Sat Jun  2 02:21:21 EDT 2012 Desired freq: 329.63
+Sat Jun  2 02:21:29 EDT 2012 Signal Power(RMS) 4.75416
+Sat Jun  2 02:21:29 EDT 2012 INITIAL FREQ: 320.289
+Sat Jun  2 02:21:29 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Increment: 100
+Sat Jun  2 02:21:38 EDT 2012 Signal Power(RMS) 4.80439
+Sat Jun  2 02:21:38 EDT 2012 Frequency: 320.379
+Sat Jun  2 02:21:38 EDT 2012 prevFreq: 320.289
+Sat Jun  2 02:22:01 EDT 2012 POWER ON
+Sat Jun  2 02:22:01 EDT 2012 2Done Step
+Sat Jun  2 02:22:01 EDT 2012 POWER OFF
+Sat Jun  2 02:22:01 EDT 2012 Signal Power(RMS) 5.02487
+Sat Jun  2 02:22:01 EDT 2012 Frequency: 326.586
+Sat Jun  2 02:22:01 EDT 2012 prevFreq: 320.379
+Sat Jun  2 02:22:22 EDT 2012 POWER ON
+Sat Jun  2 02:22:22 EDT 2012 2Done Step
+Sat Jun  2 02:22:22 EDT 2012 POWER OFF
+Sat Jun  2 02:22:22 EDT 2012 Signal Power(RMS) 5.11095
+Sat Jun  2 02:22:22 EDT 2012 Frequency: 332.339
+Sat Jun  2 02:22:22 EDT 2012 prevFreq: 326.586
+Sat Jun  2 02:22:22 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~Increment: 50
+Sat Jun  2 02:22:22 EDT 2012 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`Increment: 20
+Sat Jun  2 02:22:31 EDT 2012 POWER OFF
+Sat Jun  2 02:22:31 EDT 2012 POWER OFF
+Sat Jun  2 02:22:31 EDT 2012 6Done Step
+Sat Jun  2 02:22:31 EDT 2012 Port Closed

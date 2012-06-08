@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Source Files</title>
+  </head>
+  <body bgcolor=white>
+	<img src="daddario.jpg"><br />
+	
+For Source Code: <a href="https://github.com/mattfors/D-Addario-String-Test">String Test Github</a> <br /><br /><br />
+	
+
+
+
+
+<b>Linux</b><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.ubuntu.com/download/desktop/windows-installer">Ubuntu Windows Installer</a> <br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.linuxmint.com">Linux Mint</a>
+
+<br /><br />
+<b>Arduino</b><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://arduino.cc/hu/Main/Software">Arduino IDE</a>
+<br /><br />
+
+<b>Installing Required Libraries </b>(libserial, FFTW, Arduino)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Automatic: librariesinstall.sh<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Installs libraries required to compile program.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To run:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	(1)Open terminal and navigate to directory<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	(2)Enter: "bash librariesinstall.sh" without quotes<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	(3)Enter password when prompted<br />
+
+&nbsp;&nbsp;&nbsp;&nbsp;Manual<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter: "sudo apt-get install libserial0 libserial-dev fftw2 fftw-dev avr-libc gcc-avr" without quotes.<br /><br />
+
+<b>Port Detection</b><br />
+&nbsp;&nbsp;&nbsp;&nbsp;Automatic: portdetect.sh <br />
+&nbsp;&nbsp;&nbsp;&nbsp;Compares the contents of /dev/ directroy to determine the location of added device. Generates the config file required by program.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To run: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	(1)Open terminal and navigate to directory<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	(2)Enter: "bash portdetect.sh" without quotes<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	(3)Follow instructions given by script<br />
+
+&nbsp;&nbsp;&nbsp;&nbsp;Manual <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can find the location of an Arduino board by looking in the /dev/ directory or using the Arduino IDE. In the Arduino IDE go to tools>Serial Port, a check mark should be next to the device. If you already know the location you can manual add it to the config file<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)Open "config" in a text editor<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)Add the location to the first line of the file<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ex.) "/dev/ttyACM0" without quotes<br /><br />
+
+<b>To Compile:</b><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)Open terminal and navigate to directory of Makefile<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)Enter: "make" without quotes<br />
+	</body>
+</html>
