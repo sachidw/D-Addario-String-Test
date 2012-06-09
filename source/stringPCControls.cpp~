@@ -339,7 +339,7 @@ double stringPCControls::sampleTensFast(int selectedString)
 	else
 		strng="0";
 	
-	double conversion=100/3.104; //Conversion factor to convert volts to pounds
+	double conversion=100/3.104;
 	
 	string command;
 	command.append("2");
@@ -386,8 +386,7 @@ void stringPCControls::motorStep(int selectedString, int numSteps, int direct)
 			strng="0";
 		else
 			strng="6";
-		
-		/*Prevent the motor from over stepping in either direction*/
+
 		if(totalSteps[selectedString]+stepSize>MAXSTEPS && direct ==0)
 			stepSize = MAXSTEPS - totalSteps[selectedString];
 		else if(totalSteps[selectedString]-stepSize<0 && direct ==1)
@@ -395,8 +394,7 @@ void stringPCControls::motorStep(int selectedString, int numSteps, int direct)
 		
 		numSteps=stepSize;
 
-		/*Convert integer steps size to string of proper format*/
-		sSteps[0]=  ((stepSize-(stepSize%1000))/1000)+48  ;           
+		sSteps[0]=  ((stepSize-(stepSize%1000))/1000)+48  ;           //((stepSize- (stepSize%1000))/1000)+48;
 		stepSize = stepSize%1000;
 		sSteps[1]= ((stepSize- (stepSize%100))/100)+48;
 		stepSize = stepSize%100;
@@ -404,7 +402,6 @@ void stringPCControls::motorStep(int selectedString, int numSteps, int direct)
 		stepSize = stepSize%10;
 		sSteps[3]= stepSize+48;
 	
-		/*Create command*/
 		command.append("0");
 		command.append(sDirect);
 		command.push_back(sSteps[0]);
@@ -424,8 +421,7 @@ void stringPCControls::motorStep(int selectedString, int numSteps, int direct)
 			totalSteps[selectedString]= totalSteps[selectedString]   -    numSteps;
 			elapsedSteps[selectedString]= elapsedSteps[selectedString]  -  numSteps;	
 		}
-		/*Write positions before sending command */
-		writePositions(); 
+		writePositions();
 		ardu << command ;
 		cout<<readLine();
 		
@@ -463,7 +459,6 @@ void stringPCControls::pluck(int selectedString)
 
 /****************************************************************** 
  *	Send command to half pluck string 
- * 	This is no longer needed after plucking motor problem was resolved
  ******************************************************************/ 
 void stringPCControls::halfPluck(int selectedString)
 {
@@ -520,8 +515,7 @@ void stringPCControls::resetPosition(int strng)
 }
 
 /****************************************************************** 
- *	Write the current absalute motor positions to the position file
- *
+ *	Step back motor to original position 
  ******************************************************************/ 
 
 void stringPCControls::writePositions()

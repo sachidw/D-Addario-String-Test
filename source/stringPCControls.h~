@@ -69,8 +69,6 @@ public:
 	//Initilizes the port with the Aurdion
 
 	void closePort();
-	//Closes the Arduino port
-
 
 	int totalSteps[6];	//Absalute position of motors
 	int elapsedSteps[6]; 	//Steps since start of program
@@ -79,11 +77,7 @@ public:
 
 private:
   	string readLine();
-	//Reads a line from serial 
-	//Reads until end of line is recieved
-
 	void writePositions();
-	//Write absalute positions of motor to file
 	
 };
 

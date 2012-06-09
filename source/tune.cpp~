@@ -65,20 +65,17 @@ void tuneUpv2(int testStrng)
 	
 	while(!inTune)
 	{
-		if(slope > .001) //If the slope is too small you run the risk of giant step sizes
+		if(slope > .001)
 			stepSize= (( (stringFrequencies[testStrng]-1)   -freq) / slope);
 		if(stepSize>500) //Limit the steps size to 500 for testing purposes
 			stepSize=500;
-
 		cout<<"Step size: "<<stepSize<<endl;
 		cout<<"Step MOTOR?"<<endl; //For testing purpose so we don't accidently break the string
 		getchar();		   //Wait for user to approve the step size
 		TestControl.motorStep(testStrng, stepSize, 0);
 		sleep(4); //Let string settle
 		cout<<"Done rest period"<<endl;
-		prevFreq=freq;	
-	
-		/*Acquire a good frequency reading*/		
+		prevFreq=freq;		
 		do{
 			TestControl.sampleString(testStrng);
 			freq=TestControl.getFreq(stringFrequencies[testStrng]);
@@ -155,13 +152,6 @@ void tuneUpv2(int testStrng)
 		}	
 }
 
-
-/****************************************************************** 
-*	tuneUpv1 - Attempts to tune the string up to the proper pitch
-*	by varying the number of steps taken based on the proximity 
-*	with the desired frequency
-******************************************************************/ 
-
 void tuneUpv1(int testStrng)
 {
 	double tension=0;
@@ -212,7 +202,6 @@ void tuneUpv1(int testStrng)
 		while(!inTune)
 		{
 			
-			/*These work with nylon string but will be different for metal*/			
 			if(freq < (stringFrequencies[testStrng]-5))		
 				TestControl.motorStep(testStrng, 100, 0);	
 			else if(freq < (stringFrequencies[testStrng]-1))		

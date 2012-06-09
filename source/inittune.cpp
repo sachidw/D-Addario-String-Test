@@ -1,6 +1,6 @@
 /*****************************************************************************
 * String Test Control Program for D'Addario String Test Device 
-* This program is intended to be used to periodically retun a string
+* 
 * 
 * 
 *
@@ -31,10 +31,7 @@ int front=0;
 int back=0;
 
 
-/****************************************************************** 
-*	tuneUpv2 - Attempts to tune the string up to the proper pitch
-*	by estimating the rate of change of frequency per step.
-******************************************************************/  
+
 void tuneUpv2(int testStrng)
 {
 	double tension=0;
@@ -54,38 +51,31 @@ void tuneUpv2(int testStrng)
 	TestControl.sampleString(testStrng);
 	freq=TestControl.getFreq(stringFrequencies[testStrng]);
 	slope = (freq-prevFreq)/stepSize;
-	
 	cout<<"1st freq: "<<prevFreq<<"  2nd freq: "<<freq<<"  Initial Slope: "<<slope<<endl;
-	
-	/*Output the initial frequency to file so it can be added to data file*/
+	/*
 	ofstream fDat;
 	fDat.open ("initialFreq.dat", ios::app);
 	fDat<<freq<<endl;
-	fDat.close();
+	fDat.close();*/
 	
 	while(!inTune)
 	{
-		if(slope > .001) //If the slope is too small you run the risk of giant step sizes
+		if(slope > .001)
 			stepSize= (( (stringFrequencies[testStrng]-1)   -freq) / slope);
-		if(stepSize>500) //Limit the steps size to 500 for testing purposes
+		if(stepSize>500)
 			stepSize=500;
-
 		cout<<"Step size: "<<stepSize<<endl;
-		cout<<"Step MOTOR?"<<endl; //For testing purpose so we don't accidently break the string
-		getchar();		   //Wait for user to approve the step size
+		cout<<"Step MOTOR?"<<endl;
+		getchar();	
 		TestControl.motorStep(testStrng, stepSize, 0);
 		sleep(4); //Let string settle
 		cout<<"Done rest period"<<endl;
-		prevFreq=freq;	
-	
-		/*Acquire a good frequency reading*/		
+		prevFreq=freq;		
 		do{
 			TestControl.sampleString(testStrng);
 			freq=TestControl.getFreq(stringFrequencies[testStrng]);
 		} while (freq==0 && (freq< prevFreq-15 || freq>prevFreq+15));	
-		
-		slope=(freq-prevFreq)/stepSize; //Estimate the slope based on the difference in f and the last step size
-
+		slope=(freq-prevFreq)/stepSize;
 		cout<<"Frequency: "<<freq<<"  PrevFrequency:"<<prevFreq<<"  Slope: "<<slope<<"  Attempt #"<<aindex<<endl;
 		
 		/*if(slope<0.005)
@@ -125,8 +115,6 @@ void tuneUpv2(int testStrng)
 	}
 	aindex=0;
 	inTune=false;	
-
-	/*There is difficulty with the slope method as it approached the desired frequneyc so finish with frequency range method*/
 	while(!inTune)
 		{
 			
@@ -155,13 +143,6 @@ void tuneUpv2(int testStrng)
 		}	
 }
 
-
-/****************************************************************** 
-*	tuneUpv1 - Attempts to tune the string up to the proper pitch
-*	by varying the number of steps taken based on the proximity 
-*	with the desired frequency
-******************************************************************/ 
-
 void tuneUpv1(int testStrng)
 {
 	double tension=0;
@@ -173,9 +154,7 @@ void tuneUpv1(int testStrng)
 	 *	Tighten string up 2 pounds less than tension from
 	 *      test configuration. Stop at less than 100 pounds
 	 *      which is max load for loadcell. Do not tension if string
-	 *      is broken.
-	 *      Note: this code will most likely end up being performed by an
-	 *  	      outside program to allow for plucking motor adjustments	
+	 *      is broken.	
 	 ******************************************************************/  
 	/*	tension=TestControl.sampleTens(testStrng);
 		cout<<"Desired Tension: "<<stringTensions[testStrng]<<endl;
@@ -212,7 +191,6 @@ void tuneUpv1(int testStrng)
 		while(!inTune)
 		{
 			
-			/*These work with nylon string but will be different for metal*/			
 			if(freq < (stringFrequencies[testStrng]-5))		
 				TestControl.motorStep(testStrng, 100, 0);	
 			else if(freq < (stringFrequencies[testStrng]-1))		
@@ -229,7 +207,7 @@ void tuneUpv1(int testStrng)
 			do{
 				TestControl.sampleString(testStrng);
 				freq=TestControl.getFreq(stringFrequencies[testStrng]);
-			} while (freq==0 && (freq< prevFreq -15 || freq> prevFreq+15));			
+			} while (freq==0);			
 			cout<<"Frequency: "<<freq<<"  PrevFrequency:"<<prevFreq<<"  Attempt #"<<aindex<<endl;
 			if(freq>=stringFrequencies[testStrng] || freq>stringFrequencies[testStrng]-.1)
 				inTune = true;
@@ -241,10 +219,15 @@ void tuneUpv1(int testStrng)
 
 
 
+void sBreak(int strng)
+{
+	stringBreak[strng] =1;
+	cout<<"String Break on: "<<strng<<endl;
+	
 
-/****************************************************************** 
-*	Load test information in from testconfig file
- ******************************************************************/  
+}
+
+
 void readTestCon()
 {
 	string readstring;
@@ -266,8 +249,12 @@ void readTestCon()
 		
 	for(int i=0; i<6; i++)
 	{	
+		
 		cout<<"String "<<i<<"\tFrequency: "<<stringFrequencies[i]<<"   "<<"\tTension: "<<stringTensions[i]<<endl;
-	}
+	}/*
+	cout<<"Time between tests: "<<timeBetweenTest<<"\tNumber of tests: "<<numberofTest<<"\tTotal time: ";
+	cout<<((timeBetweenTest*numberofTest)/60)<<" hours"<<endl;
+	*/
 	config.close();	
 }
 
@@ -279,16 +266,21 @@ int main ()
   	
 	readTestCon();
 	TestControl.initializePort();
-	tuneUpv1(0);	
-	tuneUpv1(1);
-	tuneUpv1(2);
-
+	//tuneUpv2(0);	
+	//tuneUpv2(1);
+	tuneUpv2(2);
+	/*
 	rawDat.open ("elapsedTension.dat"); 
 	TestControl.closePort();
 	rawDat<<TestControl.getElapsedSteps(0)<<endl;
 	rawDat<<TestControl.getElapsedSteps(1)<<endl;
 	rawDat<<TestControl.getElapsedSteps(2)<<endl;
-	rawDat.close();
+	rawDat.close();*//*
+	for(int i=0; i<10; i++)
+	{
+		TestControl.sampleString(0);
+		cout<<TestControl.getFreq(stringFrequencies[0])<<endl;
+	}*/
 	TestControl.closePort();
 	
 	
