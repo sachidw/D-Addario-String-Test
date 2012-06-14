@@ -63,4 +63,4 @@ clean:
 	rm source/reset.o
 	rm source/tension.o
 	rm source/bringtension.o
-	rm source/inittune.o
+	rm soruce/inittune.o
